@@ -5,24 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
 </head>
+<style>
+    /* player 1 = #E4EFE7
+    player 2 = #FAF1E6*/
+    body{
+        margin: 0;
+        padding: 0;
+        background-color: #FAF1E6;
+    }
+    .Tic-Tac-Toe-board{
+        margin: 5px auto;
+        padding: 30px;
+    }
+    .heading{
+        text-align: center;
+    }
+    .player{
+        text-align: center;
+        font-size: 18px;
+    }
+    .game-board{
+        width: 500px;
+        flex-wrap: wrap;
+        margin: 5px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+    .cell{
+        height: 150px;
+        width: 150px;
+        margin: 3px;
+        border: 2px solid black;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cell:hover{
+        box-shadow: 0 0 15px 0 grey;
+        transition: 1s;
+    }
+    .reset-btn{
+        border: none;
+        margin: 10px 665px;
+        font-size: 30px;
+        background-color: #99BC85;
+        color: black;
+        padding: 8px 25px;
+        border-radius: 5px;
+    }
+</style>
 <body>
-    <div>
-        <h1>Tic Tac Toe</h1>
-        <p>Current player: 1</p>
+    <div class="Tic-Tac-Toe-board">
+        <h1 class="heading">Tic Tac Toe</h1>
+        <p class="player">Current player: 1</p>
 
-        <div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+        <div class="game-board">
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
+            <div class="cell"></div>
         </div>
 
-        <button type="button">Reset</button>
+        <button type="button" class="reset-btn">Reset</button>
     </div>
 </body>
 </html>
