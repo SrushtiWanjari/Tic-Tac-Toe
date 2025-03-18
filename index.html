@@ -120,7 +120,12 @@
         renderBoard();
       }
 
-      
+      function isPlayerPresent(places, player){
+        const [a, b, c] = places;
+        return(
+            board[a] === player && board[b] === player && board[c] === player
+        );
+      }
     </script>
   </body>
 </html>
