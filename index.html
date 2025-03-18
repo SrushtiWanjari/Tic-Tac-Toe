@@ -6,8 +6,6 @@
     <title>Tic-Tac-Toe</title>
   </head>
   <style>
-    /* player 1 = #E4EFE7
-    player 2 = #FAF1E6*/
     body {
       margin: 0;
       padding: 0;
@@ -23,6 +21,7 @@
     .player {
       text-align: center;
       font-size: 18px;
+      height: 100px;
     }
     .game-board {
       width: 500px;
@@ -31,7 +30,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 20px;
     }
     .cell {
       height: 150px;
@@ -56,38 +54,39 @@
       padding: 8px 25px;
       border-radius: 5px;
     }
+
   </style>
   <body>
     <div class="Tic-Tac-Toe-board">
       <h1 class="heading">Tic Tac Toe</h1>
-      <p class="player" id="current-player">Current player: 1</p>
+      <p class="player" id="current-player">Current player: Player 1</p>
 
       <div class="game-board">
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
+        <div class="cell" onclick="makeMove(0)"></div>
+        <div class="cell"  onclick="makeMove(1)"></div>
+        <div class="cell"  onclick="makeMove(2)"></div>
+        <div class="cell"  onclick="makeMove(3)"></div>
+        <div class="cell"  onclick="makeMove(4)"></div>
+        <div class="cell"  onclick="makeMove(5)"></div>
+        <div class="cell"  onclick="makeMove(6)"></div>
+        <div class="cell"  onclick="makeMove(7)"></div>
+        <div class="cell"  onclick="makeMove(8)"></div>
       </div>
 
-      <button type="button" class="reset-btn">Reset</button>
+      <button type="button" class="reset-btn" onclick=" resetBoard()">Reset</button>
     </div>
 
     <script>
-      const border = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
+     const board = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
       let currentPlayer = "Player1";
 
       const renderBoard = () => {
         const allBoxes = document.querySelectorAll(".cell");
         allBoxes.forEach((box, index) => {
           if (board[index] === "Player2") {
-            box.innerHTML = '<img class="player" src="player-2.png"/>';
+            box.innerHTML = '<img class="player" src="player-2.png" alt="X" />';
           } else if (board[index] === "Player1") {
-            box.innerHTML = '<img class="player" src="player-1.png"/>';
+            box.innerHTML = '<img class="player" src="player-1.png" alt="O" />';
           } else {
             box.innerHTML = "";
           }
@@ -108,78 +107,61 @@
         } else {
           currentPlayer = "Player1";
         }
-
         const currentPlayerElement = document.getElementById("current-player");
         currentPlayerElement.innerText = `Current Player: ${currentPlayer}`;
         renderBoard();
-        checkwinner();
+        checkWinner();
       };
 
-      function resetBoard(){
+      function resetBoard() {
         board.fill(-1);
         renderBoard();
       }
 
-      function isPlayerPresent(places, player){
+      function isPlayerPresent(places, player) {
         const [a, b, c] = places;
-        return(
-            board[a] === player && board[b] === player && board[c] === player
+        return (
+          board[a] === player && board[b] === player && board[c] === player
         );
       }
 
-      function checkWinner(){
-        if(isPlayerPresent([0, 1, 2], "Player1")){
-            alert("player1 wins");
+      function checkWinner() {
+        if (isPlayerPresent([0, 1, 2], "Player1")) {
+          alert("Player1 wins");
+        } else if (isPlayerPresent([3, 4, 5], "Player1")) {
+          alert("Player1 wins");
+        } else if (isPlayerPresent([6, 7, 8], "Player1")) {
+          alert("Player1 wins");
+        } else if (isPlayerPresent([0, 4, 8], "Player1")) {
+          alert("Player1 wins");
+        } else if (isPlayerPresent([2, 4, 6], "Player1")) {
+          alert("Player1 wins");
+        } else if (isPlayerPresent([0, 3, 6], "Player1")) {
+          alert("Player1 wins");
+        } else if (isPlayerPresent([1, 4, 7], "Player1")) {
+          alert("Player1 wins");
+        } else if (isPlayerPresent([2, 5, 8], "Player1")) {
+          alert("Player1 wins");
         }
-        else if (isPlayerPresent([3, 4, 5], "Player1")){
-            alert("player1 wins");
-      }
-      else if (isPlayerPresent([6, 7, 8], "Player1")){
-        alert("player1 wins");
-      }
-      else if (isPlayerPresent([0, 4, 8], "Player1")){
-        alert("player1 wins");
-      }
-      else if (isPlayerPresent([2, 4, 6], "Player1")){
-        alert("player1 wins");
-      }
-      else if (isPlayerPresent([0, 3, 6], "Player1")){
-        alert("player1 wins");
-      }
-      else if (isPlayerPresent([1, 4, 7], "Player1")){
-        alert("player1 wins");
-      }
-      else if (isPlayerPresent([2, 5, 8], "Player1")){
-        alert("player1 wins");
-      }
 
-
-
-      if(isPlayerPresent([0, 1, 2], "Player2")){
-            alert("player2 wins");
+        if (isPlayerPresent([0, 1, 2], "Player2")) {
+          alert("Player2 wins");
+        } else if (isPlayerPresent([3, 4, 5], "Player2")) {
+          alert("Player2 wins");
+        } else if (isPlayerPresent([6, 7, 8], "Player2")) {
+          alert("Player2 wins");
+        } else if (isPlayerPresent([0, 4, 8], "Player2")) {
+          alert("Player2 wins");
+        } else if (isPlayerPresent([2, 4, 6], "Player2")) {
+          alert("Player2 wins");
+        } else if (isPlayerPresent([0, 3, 6], "Player2")) {
+          alert("Player2 wins");
+        } else if (isPlayerPresent([1, 4, 7], "Player2")) {
+          alert("Player2 wins");
+        } else if (isPlayerPresent([2, 5, 8], "Player2")) {
+          alert("Player2 wins");
         }
-        else if (isPlayerPresent([3, 4, 5], "Player2")){
-            alert("player2 wins");
       }
-      else if (isPlayerPresent([6, 7, 8], "Player2")){
-        alert("player2 wins");
-      }
-      else if (isPlayerPresent([0, 4, 8], "Player2")){
-        alert("player2 wins");
-      }
-      else if (isPlayerPresent([2, 4, 6], "Player2")){
-        alert("player2 wins");
-      }
-      else if (isPlayerPresent([0, 3, 6], "Player2")){
-        alert("player2 wins");
-      }
-      else if (isPlayerPresent([1, 4, 7], "Player2")){
-        alert("player2 wins");
-      }
-      else if (isPlayerPresent([2, 5, 8], "Player2")){
-        alert("player2 wins");
-      }
-    }
     </script>
   </body>
 </html>
