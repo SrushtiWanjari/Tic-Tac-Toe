@@ -126,6 +126,60 @@
             board[a] === player && board[b] === player && board[c] === player
         );
       }
+
+      function checkWinner(){
+        if(isPlayerPresent([0, 1, 2], "Player1")){
+            alert("player1 wins");
+        }
+        else if (isPlayerPresent([3, 4, 5], "Player1")){
+            alert("player1 wins");
+      }
+      else if (isPlayerPresent([6, 7, 8], "Player1")){
+        alert("player1 wins");
+      }
+      else if (isPlayerPresent([0, 4, 8], "Player1")){
+        alert("player1 wins");
+      }
+      else if (isPlayerPresent([2, 4, 6], "Player1")){
+        alert("player1 wins");
+      }
+      else if (isPlayerPresent([0, 3, 6], "Player1")){
+        alert("player1 wins");
+      }
+      else if (isPlayerPresent([1, 4, 7], "Player1")){
+        alert("player1 wins");
+      }
+      else if (isPlayerPresent([2, 5, 8], "Player1")){
+        alert("player1 wins");
+      }
+
+
+
+      if(isPlayerPresent([0, 1, 2], "Player2")){
+            alert("player2 wins");
+        }
+        else if (isPlayerPresent([3, 4, 5], "Player2")){
+            alert("player2 wins");
+      }
+      else if (isPlayerPresent([6, 7, 8], "Player2")){
+        alert("player2 wins");
+      }
+      else if (isPlayerPresent([0, 4, 8], "Player2")){
+        alert("player2 wins");
+      }
+      else if (isPlayerPresent([2, 4, 6], "Player2")){
+        alert("player2 wins");
+      }
+      else if (isPlayerPresent([0, 3, 6], "Player2")){
+        alert("player2 wins");
+      }
+      else if (isPlayerPresent([1, 4, 7], "Player2")){
+        alert("player2 wins");
+      }
+      else if (isPlayerPresent([2, 5, 8], "Player2")){
+        alert("player2 wins");
+      }
+    }
     </script>
   </body>
 </html>
