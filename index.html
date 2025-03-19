@@ -54,7 +54,6 @@
       padding: 8px 25px;
       border-radius: 5px;
     }
-
   </style>
   <body>
     <div class="Tic-Tac-Toe-board">
@@ -63,21 +62,23 @@
 
       <div class="game-board">
         <div class="cell" onclick="makeMove(0)"></div>
-        <div class="cell"  onclick="makeMove(1)"></div>
-        <div class="cell"  onclick="makeMove(2)"></div>
-        <div class="cell"  onclick="makeMove(3)"></div>
-        <div class="cell"  onclick="makeMove(4)"></div>
-        <div class="cell"  onclick="makeMove(5)"></div>
-        <div class="cell"  onclick="makeMove(6)"></div>
-        <div class="cell"  onclick="makeMove(7)"></div>
-        <div class="cell"  onclick="makeMove(8)"></div>
+        <div class="cell" onclick="makeMove(1)"></div>
+        <div class="cell" onclick="makeMove(2)"></div>
+        <div class="cell" onclick="makeMove(3)"></div>
+        <div class="cell" onclick="makeMove(4)"></div>
+        <div class="cell" onclick="makeMove(5)"></div>
+        <div class="cell" onclick="makeMove(6)"></div>
+        <div class="cell" onclick="makeMove(7)"></div>
+        <div class="cell" onclick="makeMove(8)"></div>
       </div>
 
-      <button type="button" class="reset-btn" onclick=" resetBoard()">Reset</button>
+      <button type="button" class="reset-btn" onclick=" resetBoard()">
+        Reset
+      </button>
     </div>
 
     <script>
-     const board = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
+      const board = [-1, -1, -1, -1, -1, -1, -1, -1, -1];
       let currentPlayer = "Player1";
 
       const renderBoard = () => {
@@ -143,6 +144,7 @@
         } else if (isPlayerPresent([2, 5, 8], "Player1")) {
           alert("Player1 wins");
         }
+        
 
         if (isPlayerPresent([0, 1, 2], "Player2")) {
           alert("Player2 wins");
@@ -160,6 +162,11 @@
           alert("Player2 wins");
         } else if (isPlayerPresent([2, 5, 8], "Player2")) {
           alert("Player2 wins");
+        }
+        
+
+        if (!board.includes(-1)) {
+          alert("It's a draw!");
         }
       }
     </script>
